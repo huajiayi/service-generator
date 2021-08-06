@@ -72,11 +72,11 @@ const main = async () => {
 
         // 把类型中的R和ResultBody转换成HttpResponse
         openapi.types.forEach(type => {
-          if(type.isGenerics && type.name.indexOf('R') !== -1) {
+          if(type.name === 'R' || type.name === 'R<T>') {
             type.name = type.name.replace('R', 'HttpResponse');
           }
 
-          if(type.isGenerics && type.name.indexOf('ResultBody') !== -1) {
+          if(type.name === 'ResultBody' || type.name === 'ResultBody<T>') {
             type.name = type.name.replace('ResultBody', 'HttpResponse');
           }
         });
