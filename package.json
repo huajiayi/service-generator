@@ -1,0 +1,24 @@
+{
+  "name": "service-generator",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "openapi-tool": "latest",
+    "umi-request": "^1.3.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huajiayi/service-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/huajiayi/service-generator/issues"
+  },
+  "homepage": "https://github.com/huajiayi/service-generator#readme",
+  "description": ""
+}
