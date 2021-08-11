@@ -67,7 +67,13 @@ const main = async () => {
           api.request.urlText = `${prefix}${api.request.urlText}`;
 
           // 把响应类型中的R和ResultBody转换成HttpResponse
-          api.response.type = api.response.type.replace('R', 'HttpResponse').replace('ResultBody', 'HttpResponse');
+          if(api.response.type === "R") {
+            api.response.type = api.response.type.replace('R', 'HttpResponse');
+          }else if(api.response.type === "ResultBody") {
+            api.response.type = api.response.type.replace('ResultBody', 'HttpResponse');
+          }else {
+            api.response.type = api.response.type.replace('R<', 'HttpResponse<').replace('ResultBody<', 'HttpResponse<');
+          }
         });
 
         // 把类型中的R和ResultBody转换成HttpResponse
